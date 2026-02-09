@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: Arial;
+}
+
+img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px pink;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: pink;
+}
+/* Love Button */
+.love-btn {
+    margin-top: 25px;
+    padding: 14px 36px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(255,65,108,0.6);
+    transition: all 0.3s ease;
+}
+
+.love-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255,65,108,0.9);
+}
+/* Falling Roses */
+.rose {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+    <div id="roses"></div>
+
+<script>
+// Create falling roses
+const rosesContainer = document.getElementById("roses");
+
+setInterval(() => {
+    const rose = document.createElement("div");
+    rose.classList.add("rose");
+    rose.innerHTML = "🌹";
+
+    rose.style.left = Math.random() * 100 + "vw";
+    rose.style.fontSize = Math.random() * 15 + 20 + "px";
+    rose.style.animationDuration = Math.random() * 3 + 4 + "s";
+
+    rosesContainer.appendChild(rose);
+
+    setTimeout(() => {
+        rose.remove();
+    }, 7000);
+
+}, 500);
+</script>
+
+<h1>I Love You 💖</h1>
+
+<img src="photo.jpeg" alt="Love Photo">
+
+<audio autoplay loop controls>
+    <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSf56LQJgQaSoQ52aNa-buAcLTEr3gRe409TO_P8-jzrR1u_TQ/viewform?usp=dialog" 
+   target="_blank" 
+   class="love-btn">
+   Take the First Step 💖
+</a>
+
+
+</body>
+</html>
